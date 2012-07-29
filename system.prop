@@ -1,0 +1,141 @@
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+debug.sf.hw=1
+# [LS5] Kang Seong-Goo 2011.08.19
+# Use GPU composition
+#debug.composition.type=c2d
+debug.composition.type=gpu
+# [PS1] Kang Seong-Goo 2011.07.26 1->0
+# [PS1] Kang Seong-Goo 2011.09.09 0->1
+debug.overlayui.enable=1
+# PS4 P13160 KKH 
+#dalvik.vm.heapsize=36m
+dalvik.vm.heapsize=64m
+dev.pm.dyn_samplingrate=1
+
+#FEATURE_SKT_DS_CHANGE_MTU
+persist.data_netmgrd_mtu=1440
+
+#
+# system props for the cne module
+#
+#FEATURE_SKY_DS_CNE_DISABLE
+#persist.cne.UseCne=vendor
+persist.cne.UseCne=false
+
+persist.cne.bat.range.low.med=30
+persist.cne.bat.range.med.high=60
+persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml
+persist.cne.loc.policy.user=/system/etc/UserPolicy.xml
+persist.cne.bwbased.rat.sel=false
+persist.cne.snsr.based.rat.mgt=false
+persist.cne.bat.based.rat.mgt=false
+persist.cne.rat.acq.time.out=30000
+persist.cne.rat.acq.retry.tout=0
+
+#
+#lpa.decode=true
+#jmlee Emersys EQ --> LPA Dsiable
+lpa.decode=false
+ro.hdmi.enable=true
+lpa.use-stagefright=true
+
+#system props for the MM modules
+
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-fma2dp=false
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+# 2011.07.22 [PS9] p12455, add stagefright scan & meta
+media.stagefright.enable-scan=true
+media.stagefright.enable-meta=true
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+
+#
+# system props for SD card emulation of emmc partition
+#
+#<-- p11171 dongseok modified
+#ro.emmc.sdcard.partition=17
+ro.emmc.sdcard.partition=27
+#-->
+
+#system props for time-services
+persist.timed.enable=true
+
+# System props for audio
+persist.audio.fluence.mode=endfire
+persist.audio.vr.enable=false
+
+#
+# system prop for opengles version
+#
+# 131072 is decimal for 0x20000 to report version 2
+ro.opengles.version=131072
+
+#
+# system prop for Bluetooth Auto connect for remote initated connections
+#
+ro.bluetooth.remote.autoconnect=true
+
+#
+# system prop for Bluetooth FTP profile
+#
+ro.qualcomm.bluetooth.ftp=true
+#
+# system prop for requesting Master role in incoming Bluetooth connection.
+#
+ro.bluetooth.request.master=true
+# system property for Bluetooth discoverability time out in seconds
+# 0: Always discoverable
+debug.bt.discoverable_time=0
+
+# System property for cabl
+ro.qualcomm.cabl=1
+
+# (+)HOLD.PS4
+# System prop for skyhold type
+#
+persist.sky.kg.pref.type=4
+persist.sky.kg.pref.src=-1
+persist.sky.kg.pref.path=UNSPECIFIED
+# (-)HOLD.PS4
+
+# (+)POWERANI.PS4
+# System prop for phone shutdown
+#
+sky.pa.flag.shutdown=0
+# (-)POWERANI.PS4
+
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+ro.config.notification_sound=OnTheHunt.ogg
+ro.config.alarm_alert=Alarm_Classic.ogg
+ro.vendor.extension_library=/system/lib/libqc-opt.so
+ro.setupwizard.mode=OPTIONAL
+ro.com.google.gmsversion=2.3_r7
+ro.com.google.clientidbase=android-pantech
+ro.com.google.clientidbase.ms=android-skt-kr
+ro.com.google.clientidbase.yt=android-pantech
+ro.com.google.clientidbase.am=android-skt-kr
+ro.com.google.clientidbase.gmm=android-pantech
+ro.com.google.clientidbase.vs=android-pantech
+ro.com.google.clientidbase=android-qualcomm
+net.bt.name=Android
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
